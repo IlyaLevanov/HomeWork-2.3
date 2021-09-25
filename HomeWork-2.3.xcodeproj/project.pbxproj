@@ -13,6 +13,7 @@
 		09FEA9E926FF56D500B87D11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09FEA9E826FF56D500B87D11 /* Assets.xcassets */; };
 		09FEA9EC26FF56D500B87D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09FEA9EA26FF56D500B87D11 /* LaunchScreen.storyboard */; };
 		09FEA9F426FF5A0300B87D11 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FEA9F326FF5A0300B87D11 /* LoginViewController.swift */; };
+		09FEA9F626FF640700B87D11 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FEA9F526FF640700B87D11 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		09FEA9EB26FF56D500B87D11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		09FEA9ED26FF56D500B87D11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09FEA9F326FF5A0300B87D11 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		09FEA9F526FF640700B87D11 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +58,10 @@
 		09FEA9DE26FF56D300B87D11 /* HomeWork-2.3 */ = {
 			isa = PBXGroup;
 			children = (
-				09FEA9F326FF5A0300B87D11 /* LoginViewController.swift */,
 				09FEA9DF26FF56D300B87D11 /* AppDelegate.swift */,
 				09FEA9E126FF56D400B87D11 /* SceneDelegate.swift */,
+				09FEA9F526FF640700B87D11 /* WelcomeViewController.swift */,
+				09FEA9F326FF5A0300B87D11 /* LoginViewController.swift */,
 				09FEA9E526FF56D400B87D11 /* Main.storyboard */,
 				09FEA9E826FF56D500B87D11 /* Assets.xcassets */,
 				09FEA9EA26FF56D500B87D11 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09FEA9F426FF5A0300B87D11 /* LoginViewController.swift in Sources */,
+				09FEA9F626FF640700B87D11 /* WelcomeViewController.swift in Sources */,
 				09FEA9E026FF56D300B87D11 /* AppDelegate.swift in Sources */,
 				09FEA9E226FF56D400B87D11 /* SceneDelegate.swift in Sources */,
 			);
