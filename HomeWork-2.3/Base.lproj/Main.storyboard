@@ -37,12 +37,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOU-Km-DIM">
                                 <rect key="frame" x="122.5" y="265.5" width="75.5" height="37"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log in">
+                                <buttonConfiguration key="configuration" style="plain" title="Log In">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="logInButtonPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="AdB-1M-sDM"/>
-                                    <segue destination="rqv-d7-tJF" kind="show" id="XLE-DX-kdU"/>
+                                    <segue destination="rqv-d7-tJF" kind="show" identifier="segueFromLoginToWelcome" id="XLE-DX-kdU"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="57T-Jr-g2u">
@@ -81,7 +81,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ia9-dj-8K2"/>
                     <connections>
-                        <outlet property="passwordTextFiel" destination="K7s-91-CiA" id="C3z-Cz-p4F"/>
+                        <outlet property="passwordTextField" destination="K7s-91-CiA" id="ynZ-cH-tCD"/>
                         <outlet property="userNameTextField" destination="Od5-Ef-lJr" id="qaO-jx-OEu"/>
                     </connections>
                 </viewController>
@@ -96,8 +96,43 @@
                     <view key="view" contentMode="scaleToFill" id="BFv-i3-LLe" customClass="WelcomeViewController">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dso-BK-IrK">
+                                <rect key="frame" x="122" y="426" width="76" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="logOutButtonPress" destination="BFv-i3-LLe" eventType="touchUpInside" id="rro-dl-ERu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYp-Mr-fah">
+                                <rect key="frame" x="127.5" y="149" width="65" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, ____ !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lv7-1y-e4w">
+                                <rect key="frame" x="88" y="76" width="144" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="jp3-k3-rDp"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemGray2Color"/>
+                        <constraints>
+                            <constraint firstItem="Dso-BK-IrK" firstAttribute="centerX" secondItem="BFv-i3-LLe" secondAttribute="centerX" id="24V-mr-iQk"/>
+                            <constraint firstItem="lv7-1y-e4w" firstAttribute="centerY" secondItem="BFv-i3-LLe" secondAttribute="centerY" constant="-186" id="I99-F9-Db8"/>
+                            <constraint firstItem="lYp-Mr-fah" firstAttribute="centerX" secondItem="BFv-i3-LLe" secondAttribute="centerX" id="bXv-Fa-zT4"/>
+                            <constraint firstItem="lYp-Mr-fah" firstAttribute="centerY" secondItem="BFv-i3-LLe" secondAttribute="centerY" constant="-89" id="dYo-Is-pM4"/>
+                            <constraint firstItem="Dso-BK-IrK" firstAttribute="centerY" secondItem="BFv-i3-LLe" secondAttribute="centerY" constant="167.5" id="jyF-GQ-6Le"/>
+                            <constraint firstItem="lv7-1y-e4w" firstAttribute="centerX" secondItem="BFv-i3-LLe" secondAttribute="centerX" id="rKh-IS-O31"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="welcomeLabel" destination="lv7-1y-e4w" id="taR-Fx-aeA"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ns5-eZ-VGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,9 +141,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
