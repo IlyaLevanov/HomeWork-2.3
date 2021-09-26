@@ -12,18 +12,6 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
-        view.addGestureRecognizer(tap)
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let WelcomeVC = segue.destination as? WelcomeViewController else {return}
-        WelcomeVC.userName = userNameTextField.text
-    }
-    
     @IBAction func logInButtonPress() {
         if userNameTextField.text != "User" || passwordTextField.text != "Password"{
             wrongDataAlert(title: "Oops!", message: "Login or Password is incorrect")
@@ -39,8 +27,27 @@ class LoginViewController: UIViewController {
         forgotSmthAlert(title: "Oops!", message: "Your password is: 'Password'")
     }
     
-
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+    }
 }
+
+
+// MARK: - Override functions
+extension LoginViewController{
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        view.addGestureRecognizer(tap)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let WelcomeVC = segue.destination as? WelcomeViewController else {return}
+        WelcomeVC.userName = userNameTextField.text!
+    }
+}
+
 
 // MARK: - AlertViewControllers
 extension LoginViewController{

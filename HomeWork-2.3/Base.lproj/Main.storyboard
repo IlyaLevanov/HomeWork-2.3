@@ -89,11 +89,11 @@
             </objects>
             <point key="canvasLocation" x="2862.3188405797105" y="116.51785714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="orC-20-Q5W">
             <objects>
-                <viewController id="rqv-d7-tJF" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="BFv-i3-LLe" customClass="WelcomeViewController">
+                <viewController id="rqv-d7-tJF" customClass="WelcomeViewController" customModule="HomeWork_2_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BFv-i3-LLe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -104,7 +104,7 @@
                                     <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="logOutButtonPress" destination="BFv-i3-LLe" eventType="touchUpInside" id="rro-dl-ERu"/>
+                                    <segue destination="p6j-3B-V80" kind="unwind" unwindAction="unwindFor:" id="iTu-G4-m4E"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👻" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYp-Mr-fah">
@@ -130,12 +130,13 @@
                             <constraint firstItem="Dso-BK-IrK" firstAttribute="centerY" secondItem="BFv-i3-LLe" secondAttribute="centerY" constant="167.5" id="jyF-GQ-6Le"/>
                             <constraint firstItem="lv7-1y-e4w" firstAttribute="centerX" secondItem="BFv-i3-LLe" secondAttribute="centerX" id="rKh-IS-O31"/>
                         </constraints>
-                        <connections>
-                            <outlet property="welcomeLabel" destination="lv7-1y-e4w" id="taR-Fx-aeA"/>
-                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="lv7-1y-e4w" id="YHe-3w-sVm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ns5-eZ-VGh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="p6j-3B-V80" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3668.115942028986" y="116.51785714285714"/>
         </scene>
