@@ -12,8 +12,11 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
+    private let user = "User"
+    private let password = "Password"
+    
     @IBAction func logInButtonPress() {
-        if userNameTextField.text != "User" || passwordTextField.text != "Password"{
+        if userNameTextField.text != user || passwordTextField.text != password{
             wrongDataAlert(title: "Oops!", message: "Login or Password is incorrect")
         } else {
             performSegue(withIdentifier: "segueFromLoginToWelcome", sender: nil)
